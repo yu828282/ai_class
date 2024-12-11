@@ -1,9 +1,11 @@
 # 🚀ai_class
 
 # 📒Assignment : Build Your Own Image Classification AI Model
-Classify images into categories like animals, people, objects, etc.
+- This is linked to Programming for AI and Introduction to AI.
+- Deadline: Tuesday, December 17th
 
 ### Examples :
+- Classify images into categories like animals, people, objects, etc.
 - Cat vs Dog Classification
 - Wearing a Mask vs Not Wearing a Mask
 - Fruit Classification
