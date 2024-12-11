@@ -1,6 +1,6 @@
 # 🚀ai_class
 
-# 📒Assignment : Build an Image Classification AI Model
+# 📒Assignment : Build Your Own Image Classification AI Model
 Classify images into categories like animals, people, objects, etc.
 
 ### Examples :
