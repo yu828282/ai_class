@@ -42,8 +42,10 @@ Classify images into categories like animals, people, objects, etc.
 
 ---------------------------------
 
-# 🖊️ Exam : Closed Book Exam (Bring a pen)
-
+# 🖊️ Exam 
+- Closed Book Exam (Bring a pen)
+- offline exam
+  
 ## Programming for AI
 - Time : 11:00 AM (1 hour)
 - Location : Room 201
