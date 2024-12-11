@@ -1,6 +1,18 @@
 # 🚀ai_class
-# Assignment: Build an Image Classification AI Model
-(Classify images into categories like animals, people, objects, etc.)
+
+# 📒Assignment : Build an Image Classification AI Model
+Classify images into categories like animals, people, objects, etc.
+
+### Examples:
+- Cat vs Dog Classification
+- Wearing a Mask vs Not Wearing a Mask
+- Fruit Classification
+- Food Classification
+- Finger Gesture Classification
+- Sign Language Classification
+- Clothing Type Classification
+
+--------------------------------------
 
 ## Step 1
 - Open **assignment.ipynb** and copy two pieces of code from it.
@@ -30,11 +42,16 @@
 
 ---------------------------------
 
-### Examples:
-- Cat vs Dog Classification
-- Wearing a Mask vs Not Wearing a Mask
-- Fruit Classification
-- Food Classification
-- Finger Gesture Classification
-- Sign Language Classification
-- Clothing Type Classification
+# 🖊️ Exam : Closed Book Exam (Bring a pen)
+
+## Programming for AI
+- Time : 11:00 AM (1 hour)
+- Location : Room 201
+- Questions : Simple fill-in-the-blank and multiple-choice questions
+- Topics : Refer to 12_Dec_11_.pdf
+
+## Introduction to AI
+- Time : 2:00 PM (1 hour)
+- Location : Room 201
+- Questions : Simple fill-in-the-blank and multiple-choice questions
+- Topics : Refer to 12_Dec_11_.pdf
