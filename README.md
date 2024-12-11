@@ -3,7 +3,7 @@
 # 📒Assignment : Build an Image Classification AI Model
 Classify images into categories like animals, people, objects, etc.
 
-### Examples:
+### Examples :
 - Cat vs Dog Classification
 - Wearing a Mask vs Not Wearing a Mask
 - Fruit Classification
