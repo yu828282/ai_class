@@ -57,5 +57,5 @@
 ## Introduction to AI
 - Time : 2:00 PM (1 hour)
 - Location : Room 201
-- Questions : Simple fill-in-the-blank and multiple-choice questions
+- Questions : Multiple-choice questions
 - Topics : Refer to 12_Dec_11_.pdf
