@@ -14,8 +14,6 @@
 - Sign Language Classification
 - Clothing Type Classification
 
---------------------------------------
-
 ## Step 1
 - Open **assignment.ipynb** and copy two pieces of code from it.
 - Modify the "cat" part of the code to match your AI model's category.
