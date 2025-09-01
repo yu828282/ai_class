@@ -1,155 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Test</title>
-    <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Arial', sans-serif;
-        }
-        .container {
-            margin-top: 50px;
-        }
-        .title {
-            font-size: 2.5rem;
-            font-weight: bold;
-            text-align: center;
-            color: #343a40;
-        }
-        .subtitle {
-            font-size: 1.2rem;
-            text-align: center;
-            color: #6c757d;
-            margin-bottom: 30px;
-        }
-        .file-upload {
-            border: 2px dashed #6c757d;
-            border-radius: 10px;
-            text-align: center;
-            padding: 30px;
-            background-color: #fff;
-            transition: all 0.3s ease;
-        }
-        .file-upload:hover {
-            background-color: #f1f1f1;
-            border-color: #007bff;
-        }
-        .file-upload-content {
-            display: none;
-            text-align: center;
-        }
-        .file-upload-image {
-            max-width: 100%;
-            margin-bottom: 20px;
-        }
-        .upload {
-            width: 50px;
-            opacity: 0.7;
-        }
-        .upload-text {
-            color: #6c757d;
-        }
-        .btn-primary {
-            margin: 10px;
-            padding: 5px 15px;
-            border-radius: 5px;
-            background-color: #007bff;
-            border-color: #007bff;
-            color : #fff;
-        }
-        .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #004085;
-        }
-        #label-container div {
-            font-size: 1rem;
-            margin-top: 10px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Image Classifier</title>
+  <style>
+    body {
+      background-color: #e0e9f3;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    img {
+      padding-top: 30px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #343a40;
+    }
+    .subtitle {
+      font-size: 1.5rem;
+      color: #6c757d;
+      margin-bottom: 30px;
+    }
+    .content {
+        font-size: 1.2rem; 
+        color: #495057; 
+        margin-bottom: 30px;
+    }
+    .student-info{
+      margin: 50px 15px;
+      color: #343a40;
+    }
+    .student-info div {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .file-upload {
+      border: 2px dashed #6c757d;
+      border-radius: 10px;
+      padding: 30px;
+      background-color: #fdfdfd;
+      transition: all 0.3s ease;
+      margin: 50px 0 0 0;
+    }
+    .file-upload:hover {
+      background-color: #f1f1f1;
+      border-color: #007bff;
+    }
+    .file-upload-content {
+      display: none;
+      text-align: center;
+    }
+    .file-upload-image {
+      max-width: 100%;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+    .upload {
+      width: 60px;
+      opacity: 0.6;
+      margin-bottom: 10px;
+    }
+    .upload-text {
+      color: #6c757d;
+    }
+    .btn-primary {
+      margin: 15px 0;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #007bff;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+    .btn-red {
+      background-color: #dc3545;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn-red:hover {
+      background-color: #bd2130;
+    }
+    #label-container {
+      margin-top: 20px;
+    }
+    #label-container div {
+      background-color: #e0e9f3;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+      text-align: center;
+    }
+    .text-right {
+      text-align: right;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <section class="section">
-            <h1 class="title">AI Test</h1>
-            <h2 class="subtitle">Upload an image to see predictions</h2>
-        </section>
-        <div class="file-upload">
-            <div class="image-upload-wrap" id="image-upload-wrap">
-                <input id="file-upload-input" class="file-upload-input" type="file" onchange="readURL(this);" accept="image/*" />
-                <div class="drag-text">
-                    <img src="" class="upload">
-                    <h3 class="upload-text">Drag and drop a photo or click to upload!</h3>
-                </div>
-            </div>
-            <div class="file-upload-content" id="file-upload-content">
-                <img id="file-upload-image" class="file-upload-image" src="#" alt="Uploaded Image" />
-                <button type="button" onclick="removeUpload()" class="btn btn-danger mt-3">Remove Image</button>
-            </div>
-        </div>
-        <div class="text-center">
-            <button type="button" onclick="predict()" class="btn btn-primary">Predict</button>
-        </div>
-        <div id="label-container" class="title"></div>
+  <div class="container">
+    <section>
+      <h1 class="title">AI Image Classifier</h1>
+      <h2 class="subtitle">Upload an image and get prediction results</h2>
+      <p class="content">
+        This page lets you test the AI image classification model that <strong>you built using Teachable Machine</strong>.<br/>Then, upload an image below to see how your model predicts it!
+      </p>
+    </section>
+
+    <div class="student-info">
+      <div>Name : John doe</div>
+      <div>Student Number : 123456</div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-    <script>
-        const URL = "https://teachablemachine.withgoogle.com/models/p06c5XtR2/";  //change here 
-        let model, labelContainer, maxPredictions;
 
-        // Automatically load the model when the page loads
-        window.onload = async function () {
-            await init();
+    <div class="file-upload">
+      <div class="image-upload-wrap" id="image-upload-wrap">
+        <input id="file-upload-input" class="file-upload-input" type="file" onchange="readURL(this);" accept="image/*" />
+        <div class="drag-text">
+          <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" class="upload" />
+          <h3 class="upload-text">Drag and drop a photo or click to upload!</h3>
+        </div>
+      </div>
+      <div class="file-upload-content" id="file-upload-content">
+        <img id="file-upload-image" class="file-upload-image" src="#" alt="Uploaded Image" />
+        <div class="text-right">
+          <button type="button" onclick="removeUpload()" class="btn-red">Remove Image</button>
+        </div>
+      </div>
+    </div>
+    <div class="text-right">
+    <button type="button" onclick="predict()" class="btn-primary">Predict</button>
+    </div>
+    <div id="label-container"></div>
+    <div>
+      <img src="./confusionMatrix.png" alt="">
+      <h2 class="subtitle">Confusion Matrix</h2>
+    </div>
+  </div>
+  <footer style="text-align: center; font-size: 0.9rem; color: #adb5bd; margin-top: 60px;">
+    &copy; 2025 John doe All rights reserved.
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+  <script>
+    const URL = "https://teachablemachine.withgoogle.com/models/p06c5XtR2/";     // ⭐⭐⭐ change here ⭐⭐⭐ 
+    let model, labelContainer, maxPredictions;
+
+    window.onload = async function () {
+      await init();
+    };
+
+    async function init() {
+      const modelURL = URL + "model.json";
+      const metadataURL = URL + "metadata.json";
+      model = await tmImage.load(modelURL, metadataURL);
+      maxPredictions = model.getTotalClasses();
+
+      labelContainer = document.getElementById("label-container");
+      labelContainer.innerHTML = '';
+      for (let i = 0; i < maxPredictions; i++) {
+        labelContainer.appendChild(document.createElement("div"));
+      }
+    }
+
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          document.getElementById('image-upload-wrap').style.display = 'none';
+          const uploadImage = document.getElementById('file-upload-image');
+          uploadImage.src = e.target.result;
+          document.getElementById('file-upload-content').style.display = 'block';
         };
+        reader.readAsDataURL(input.files[0]);
+      } else {
+        removeUpload();
+      }
+    }
 
-        async function init() {
-            const modelURL = URL + "model.json";
-            const metadataURL = URL + "metadata.json";
+    function removeUpload() {
+      const input = document.getElementById('file-upload-input');
+      input.value = '';
+      document.getElementById('file-upload-content').style.display = 'none';
+      document.getElementById('image-upload-wrap').style.display = 'block';
+    }
 
-            model = await tmImage.load(modelURL, metadataURL);
-            maxPredictions = model.getTotalClasses();
-
-            // Prepare the label container
-            labelContainer = document.getElementById("label-container");
-            labelContainer.innerHTML = '';
-            for (let i = 0; i < maxPredictions; i++) {
-                labelContainer.appendChild(document.createElement("div"));
-            }
-        }
-
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    document.getElementById('image-upload-wrap').style.display = 'none';
-                    const uploadImage = document.getElementById('file-upload-image');
-                    uploadImage.src = e.target.result;
-                    document.getElementById('file-upload-content').style.display = 'block';
-                };
-                reader.readAsDataURL(input.files[0]);
-            } else {
-                removeUpload();
-            }
-        }
-
-        function removeUpload() {
-            const input = document.getElementById('file-upload-input');
-            input.value = '';
-            document.getElementById('file-upload-content').style.display = 'none';
-            document.getElementById('image-upload-wrap').style.display = 'block';
-        }
-
-        async function predict() {
-            const image = document.getElementById("file-upload-image");
-            const prediction = await model.predict(image, false);
-            for (let i = 0; i < maxPredictions; i++) {
-                const classPrediction =
-                    prediction[i].className + " : " + prediction[i].probability.toFixed(2);
-                labelContainer.childNodes[i].innerHTML = classPrediction;
-            }
-        }
-    </script>
+    async function predict() {
+      const image = document.getElementById("file-upload-image");
+      const prediction = await model.predict(image, false);
+      for (let i = 0; i < maxPredictions; i++) {
+        const classPrediction = `${prediction[i].className} : ${(prediction[i].probability * 100).toFixed(2)}%`;
+        labelContainer.childNodes[i].innerHTML = classPrediction;
+      }
+    }
+  </script>
 </body>
 </html>
